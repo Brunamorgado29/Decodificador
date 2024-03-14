@@ -1,0 +1,274 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font: 'Inter', sans-serif;
+    --button-font: 'IBM Plex Mono', monospace;
+    --header-title: white;
+    --aside-title: black;
+    --placeholder-color: black;
+
+   font-size: 65%;
+}
+
+:root.dark {
+    
+    --button-encrypt-background-color: blueviolet;
+    --button-encrypt-border-color: black;
+    --button-encrypt-font-color: black; 
+    
+    --button-descrypt-background-color: blueviolet;
+    --button-desencrypt-border-color: black;
+    --button-descrypt-font-color: black;
+    
+    --button-toggle-background-color: #050E0C;
+    --body-background-color: black;
+    --menu-background-color: #050E0C;
+    --border-theme-light: black;
+    --box-background-color: white;
+  
+    --image-shadow: linear-gradient;
+   
+    --dropdown-text-color-hover: black;
+    --warning-text-color: white;
+    --main-link-color: black;
+    
+    --button-encrypt-background-color-hover: blueviolet;
+    --button-descrypy-background-color-hover: blueviolet;
+    --button-descrypt-font-color-hover: #000000;
+
+   
+    --button-copy-background-color-hover: blueviolet;
+    --scroolbar-track-color: black;
+
+}
+
+body {
+    background-color: var(--body-background-color);
+    padding: 2.2rem 5% 1rem;
+    font-family: var(--main-font);
+
+    display: flex;
+    flex-flow: column;
+    gap: 2.6rem;
+
+}
+
+.main {
+    height: 100%;
+    flex: 1;
+}
+
+.main__image {
+    width: 5.0rem;
+    border-radius: 50%;
+    border: 0.1rem solid var(--border-theme-light);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.main__wrapper-menu {
+    position: absolute;
+    padding-left: 1.9rem;
+    left: 70%;
+    opacity: 0;
+
+    overflow: hidden;
+}
+
+@keyframes increase-height {
+    from {
+        height: 0rem;
+    }
+
+    to {
+        opacity: 1;
+        height: 10.9rem;
+    }
+}
+
+.main__content {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.main__warning {
+    display: flex;
+    gap: 0.8rem;
+    color: var(--warning-text-color);
+    font-size: 1.3rem;
+    padding: 1rem 0rem;
+}
+
+.main__wrapper-textarea {
+    border-radius: 1rem;
+    border: 0.2rem solid var(--border-theme-light);
+    background-color: var(--box-background-color);
+    box-shadow: var(--box-shadow);
+    padding: 1.6rem;
+
+    flex-basis: 37rem;
+}
+
+.main__textarea {
+    resize: none;
+    width: 100%;
+    height: 95%;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    color: var(--textarea-text-color);
+    background-color: var(--box-background-color);
+    padding-right: 1rem;
+}
+
+.main__textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+.main__wrapper-button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 3.2rem;
+}
+
+.is-button-large {
+    border: none;
+    border-radius: 1rem;
+    padding: 1.8rem 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.6rem;
+    flex: 1;
+
+    box-shadow: var(--box-shadow);
+    font-family: var(--button-font);
+    font-size: 1.7rem;
+    font-weight: small-caps;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.is-encrypt, .is-button-copy {
+    background-color: var(--button-encrypt-background-color);
+    border: 0.1rem solid var(--button-encrypt-border-color);
+    color: var(--button-encrypt-font-color);
+}
+
+.is-encrypt:hover {
+    background-color: var(--button-encrypt-background-color-hover);
+}
+
+.is-descrypt:hover {
+    background-color: var(--button-descrypy-background-color-hover);
+    color: var(--button-descrypt-font-color-hover);
+}
+
+.is-descrypt {
+    background-color: var(--button-descrypt-background-color);
+    border: 0.1rem solid var(--button-encrypt-border-color);
+    color: var(--button-descrypt-font-color);
+}
+
+.aside {
+    display: block;
+    flex-direction: column;
+}
+
+.aside__checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.aside__icon-theme {
+    margin: 0rem 0.5rem;
+}
+
+.aside__display {
+    margin-top: 3.5rem;
+    border-radius: 1rem;
+    border: .2rem solid var(--border-theme-light);
+    background-color: var(--box-background-color);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding-top: 7.6rem;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+} 
+
+.aside__display-text {
+    font-size: 1.8rem;
+    height: 36.5rem;
+    overflow-x: hidden;
+    width: 97%;
+}
+
+.aside__image {
+    position: relative;
+    width: fit-content;
+    display: inline;
+}
+
+.aside__message {
+    padding: 0rem 5%;
+}
+
+.aside__title {
+    font-size: 2rem;
+    font-weight: ligth;
+    color: var(--aside-title);
+}
+
+.aside__copy {
+    width: 100%;
+}
+
+.is-button-copy {
+    border: none;
+    border-radius: 1rem 1rem 0.6rem 0.6rem;
+}
+
+.main__textarea::-webkit-scrollbar,
+.aside__display-text::-webkit-scrollbar {
+    width: 1rem;
+}
+
+@media screen and (min-width: 1020px) {
+    body {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        gap: 3.6rem;
+    }
+    
+    .main__image {
+        width: 5rem;
+    }
+
+    .main__title {
+        font-size: 2.8rem;
+    }
+
+    .main__button {
+        padding: 0.2rem;
+    }
+
+.main__warning {
+        display: flex;
+        justify-content: center;
+    }
+
+.aside {
+        width: 34rem;
+    }
+}
